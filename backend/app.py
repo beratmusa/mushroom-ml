@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 # En iyi modeli yükle
 MODEL_PATH = "D:/mushroom-ml/backend/model/best_model.pkl"
