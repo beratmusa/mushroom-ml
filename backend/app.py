@@ -23,40 +23,40 @@ model_results = [
       {
         "model": "Logistic Regression",
         "metrics": {
-          "Accuracy": 0.95,
-          "F1 Score": 0.94,
-          "ROC AUC": 0.96,
-          "Sensitivity": 0.93,
+          "Accuracy": 0.94,
+          "F1 Score": 0.93,
+          "ROC AUC": 0.97,
+          "Sensitivity": 0.91,
           "Specificity": 0.96,
-          "Train Loss": 0.2,
-          "Test Loss": 0.25,
-          "Confusion Matrix": [[50, 5], [3, 42]]
+          "Train Loss": 0.17,
+          "Test Loss": 0.18,
+          "Confusion Matrix": [[869, 34], [66, 714]]
         }
       },
       {
         "model": "Naive Bayes",
         "metrics": {
-          "Accuracy": 0.92,
-          "F1 Score": 0.91,
+          "Accuracy": 0.86,
+          "F1 Score": 0.85,
           "ROC AUC": 0.93,
-          "Sensitivity": 0.9,
-          "Specificity": 0.94,
-          "Train Loss": 0.3,
-          "Test Loss": 0.35,
-          "Confusion Matrix": [[48, 7], [4, 41]]
+          "Sensitivity": 0.87,
+          "Specificity": 0.86,
+          "Train Loss": 0.73,
+          "Test Loss": 0.66,
+          "Confusion Matrix": [[778, 125], [99, 681]]
         }
       },
       {
         "model": "SVM",
         "metrics": {
-          "Accuracy": 0.92,
-          "F1 Score": 0.92,
-          "ROC AUC": 0.92,
-          "Sensitivity": 0.91,
-          "Specificity": 0.93,
-          "Train Loss": 0.93,
-          "Test Loss": 0.92,
-          "Confusion Matrix": [[49, 6], [3, 42]]
+          "Accuracy": 0.99,
+          "F1 Score": 0.99,
+          "ROC AUC": 1,
+          "Sensitivity": 0.99,
+          "Specificity": 1,
+          "Train Loss": 0.0024,
+          "Test Loss": 0.0032,
+          "Confusion Matrix": [[903, 0], [3, 777]]
         }
       }
     ]
@@ -67,40 +67,40 @@ model_results = [
       {
         "model": "Logistic Regression",
         "metrics": {
-          "Accuracy": 0.93,
-          "F1 Score": 0.92,
-          "ROC AUC": 0.94,
-          "Sensitivity": 0.91,
-          "Specificity": 0.95,
-          "Train Loss": 0.22,
-          "Test Loss": 0.27,
-          "Confusion Matrix": [[51, 4], [4, 41]]
+          "Accuracy": 0.92,
+          "F1 Score": 0.91,
+          "ROC AUC": 0.97,
+          "Sensitivity": 0.89,
+          "Specificity": 0.94,
+          "Train Loss": 0.20,
+          "Test Loss": 0.21,
+          "Confusion Matrix": [[854, 49], [84, 694]]
         }
       },
       {
         "model": "Naive Bayes",
         "metrics": {
-          "Accuracy": 0.91,
-          "F1 Score": 0.9,
-          "ROC AUC": 0.92,
-          "Sensitivity": 0.89,
+          "Accuracy": 0.88,
+          "F1 Score": 0.87,
+          "ROC AUC": 0.93,
+          "Sensitivity": 0.82,
           "Specificity": 0.93,
-          "Train Loss": 0.28,
-          "Test Loss": 0.33,
-          "Confusion Matrix": [[49, 6], [4, 41]]
+          "Train Loss": 0.65,
+          "Test Loss": 0.60,
+          "Confusion Matrix": [[848, 55], [137, 643]]
         }
       },
       {
         "model": "SVM",
         "metrics": {
-          "Accuracy": 0.91,
-          "F1 Score": 0.9,
-          "ROC AUC": 0.92,
-          "Sensitivity": 0.89,
-          "Specificity": 0.93,
-          "Train Loss": 0.82,
-          "Test Loss": 0.91,
-          "Confusion Matrix": [[50, 5], [5, 40]]
+          "Accuracy": 0.99,
+          "F1 Score": 0.99,
+          "ROC AUC": 1,
+          "Sensitivity": 0.99,
+          "Specificity": 1,
+          "Train Loss": 0.0036,
+          "Test Loss": 0.0043,
+          "Confusion Matrix": [[903, 0], [4, 776]]
         }
       }
     ]
@@ -111,40 +111,40 @@ model_results = [
       {
         "model": "Logistic Regression",
         "metrics": {
-          "Accuracy": 0.94,
-          "F1 Score": 0.93,
-          "ROC AUC": 0.95,
-          "Sensitivity": 0.92,
-          "Specificity": 0.96,
-          "Train Loss": 0.19,
-          "Test Loss": 0.23,
-          "Confusion Matrix": [[52, 3], [3, 42]]
+          "Accuracy": 0.84,
+          "F1 Score": 0.79,
+          "ROC AUC": 0.88,
+          "Sensitivity": 0.79,
+          "Specificity": 0.89,
+          "Train Loss": 0.37,
+          "Test Loss": 0.39,
+          "Confusion Matrix": [[808, 95], [161, 619]]
         }
       },
       {
         "model": "Naive Bayes",
         "metrics": {
-          "Accuracy": 0.91,
-          "F1 Score": 0.9,
-          "ROC AUC": 0.92,
-          "Sensitivity": 0.89,
-          "Specificity": 0.93,
-          "Train Loss": 0.28,
-          "Test Loss": 0.33,
-          "Confusion Matrix": [[49, 6], [4, 41]]
+          "Accuracy": 0.86,
+          "F1 Score": 0.84,
+          "ROC AUC": 0.88,
+          "Sensitivity": 0.77,
+          "Specificity": 0.94,
+          "Train Loss": 0.38,
+          "Test Loss": 0.40,
+          "Confusion Matrix": [[853, 50], [173, 607]]
         }
       },
       {
         "model": "SVM",
         "metrics": {
-          "Accuracy": 0.91,
-          "F1 Score": 0.9,
-          "ROC AUC": 0.92,
-          "Sensitivity": 0.89,
-          "Specificity": 0.93,
-          "Train Loss": 0.92,
-          "Test Loss": 0.91,
-          "Confusion Matrix": [[50, 5], [5, 40]]
+          "Accuracy": 0.99,
+          "F1 Score": 0.99,
+          "ROC AUC": 0.99,
+          "Sensitivity": 0.99,
+          "Specificity": 0.99,
+          "Train Loss": 0.0059,
+          "Test Loss": 0.0091,
+          "Confusion Matrix": [[899, 4], [1, 779]]
         }
       }
     ]
@@ -155,40 +155,40 @@ model_results = [
       {
         "model": "Logistic Regression",
         "metrics": {
-          "Accuracy": 0.96,
-          "F1 Score": 0.95,
+          "Accuracy": 0.94,
+          "F1 Score": 0.93,
           "ROC AUC": 0.97,
-          "Sensitivity": 0.94,
-          "Specificity": 0.98,
-          "Train Loss": 0.17,
-          "Test Loss": 0.21,
-          "Confusion Matrix": [[53, 2], [2, 43]]
+          "Sensitivity": 0.92,
+          "Specificity": 0.95,
+          "Train Loss": 0.16,
+          "Test Loss": 0.18,
+          "Confusion Matrix": [[866, 37], [62, 718]]
         }
       },
       {
         "model": "Naive Bayes",
         "metrics": {
-          "Accuracy": 0.91,
-          "F1 Score": 0.9,
-          "ROC AUC": 0.92,
-          "Sensitivity": 0.89,
-          "Specificity": 0.93,
-          "Train Loss": 0.28,
-          "Test Loss": 0.33,
-          "Confusion Matrix": [[49, 6], [4, 41]]
+          "Accuracy": 0.86,
+          "F1 Score": 0.85,
+          "ROC AUC": 0.93,
+          "Sensitivity": 0.87,
+          "Specificity": 0.85,
+          "Train Loss": 0.76,
+          "Test Loss": 0.67,
+          "Confusion Matrix": [[775, 128], [99, 681]]
         }
       },
       {
         "model": "SVM",
         "metrics": {
-          "Accuracy": 0.94,
-          "F1 Score": 0.93,
-          "ROC AUC": 0.95,
-          "Sensitivity": 0.92,
-          "Specificity": 0.96,
-          "Train Loss": 0.91,
-          "Test Loss": 0.92,
-          "Confusion Matrix": [[51, 4], [3, 42]]
+          "Accuracy": 0.99,
+          "F1 Score": 0.99,
+          "ROC AUC": 1,
+          "Sensitivity": 0.99,
+          "Specificity": 1,
+          "Train Loss": 0.0022,
+          "Test Loss": 0.0029,
+          "Confusion Matrix": [[903, 0], [1, 779]]
         }
       }
     ]
@@ -199,40 +199,40 @@ model_results = [
       {
         "model": "Logistic Regression",
         "metrics": {
-          "Accuracy": 0.97,
-          "F1 Score": 0.96,
-          "ROC AUC": 0.98,
-          "Sensitivity": 0.95,
-          "Specificity": 0.99,
-          "Train Loss": 0.15,
+          "Accuracy": 0.93,
+          "F1 Score": 0.93,
+          "ROC AUC": 0.97,
+          "Sensitivity": 0.91,
+          "Specificity": 0.95,
+          "Train Loss": 0.18,
           "Test Loss": 0.19,
-          "Confusion Matrix": [[54, 1], [1, 44]]
+          "Confusion Matrix": [[866, 37], [69, 711]]
         }
       },
       {
         "model": "Naive Bayes",
         "metrics": {
-          "Accuracy": 0.91,
-          "F1 Score": 0.9,
-          "ROC AUC": 0.92,
-          "Sensitivity": 0.89,
-          "Specificity": 0.93,
-          "Train Loss": 0.28,
-          "Test Loss": 0.33,
-          "Confusion Matrix": [[49, 6], [4, 41]]
+          "Accuracy": 0.86,
+          "F1 Score": 0.85,
+          "ROC AUC": 0.93,
+          "Sensitivity": 0.87,
+          "Specificity": 0.86,
+          "Train Loss": 0.73,
+          "Test Loss": 0.66,
+          "Confusion Matrix": [[778, 125], [99, 681]]
         }
       },
       {
         "model": "SVM",
         "metrics": {
-          "Accuracy": 0.95,
-          "F1 Score": 0.94,
-          "ROC AUC": 0.96,
-          "Sensitivity": 0.93,
-          "Specificity": 0.97,
-          "Train Loss": 0.93,
-          "Test Loss": 0.92,
-          "Confusion Matrix": [[52, 3], [2, 43]]
+          "Accuracy": 1,
+          "F1 Score": 1,
+          "ROC AUC": 1,
+          "Sensitivity": 1,
+          "Specificity": 1,
+          "Train Loss": 0.00019,
+          "Test Loss": 0.00024,
+          "Confusion Matrix": [[903, 0], [0, 780]]
         }
       }
     ]
@@ -243,8 +243,8 @@ model_results = [
       {
         "model": "Logistic Regression",
         "metrics": {
-          "Accuracy": 0.96,
-          "F1 Score": 0.95,
+          "Accuracy": 0.94,
+          "F1 Score": 0.93,
           "ROC AUC": 0.97,
           "Sensitivity": 0.94,
           "Specificity": 0.98,
@@ -257,7 +257,7 @@ model_results = [
         "model": "Naive Bayes",
         "metrics": {
           "Accuracy": 0.93,
-          "F1 Score": 0.92,
+          "F1 Score": 0.85,
           "ROC AUC": 0.94,
           "Sensitivity": 0.91,
           "Specificity": 0.95,
@@ -270,7 +270,7 @@ model_results = [
         "model": "SVM",
         "metrics": {
           "Accuracy": 0.95,
-          "F1 Score": 0.94,
+          "F1 Score": 0.99,
           "ROC AUC": 0.96,
           "Sensitivity": 0.93,
           "Specificity": 0.91,
