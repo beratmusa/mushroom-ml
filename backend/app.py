@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
-# En iyi modeli yükle
+# En iyi modeli yükleme
 MODEL_PATH = "D:/mushroom-ml/backend/model/best_model.pkl"
 if os.path.exists(MODEL_PATH):
     with open(MODEL_PATH, "rb") as file:
@@ -15,7 +15,7 @@ if os.path.exists(MODEL_PATH):
 else:
     best_model = None
 
-# Dinamik model sonuçları (örnek veriler train.py ile ilişkilendirilebilir)
+# Dinamik model sonuçları
 model_results = [
   {
     "step": "Ham Veri İle Deneysel Çalışma",

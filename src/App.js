@@ -109,7 +109,7 @@ function App() {
     }, // Özellik 21
   ];
 
-  // Özellikler için seçenekler (örnek olarak 3 seçenek sağlanmıştır)
+  // Özellikler için seçenekler
   const featureOptions = [
     {
       placeholder: " başlık şeklini seçiniz",
@@ -286,7 +286,7 @@ function App() {
     // Diğer özellikler
   ];
 
-  // Sonuçları backend'den çek
+  // Sonuçları çekme
   useEffect(() => {
     if (currentScreen === "results") {
       fetch("http://127.0.0.1:5000/results")
@@ -304,9 +304,9 @@ function App() {
     return value; // Eğer sayı değilse olduğu gibi döndür
   };
 
-  // Tahmin yap
+  // Tahmin yapma
   const handlePrediction = () => {
-    // String girdileri sayısal değerlere çevir
+    // String girdileri sayısal değerlere çevirme
     const numericInput = inputData.map(
       (value, index) => labelEncoders[index][value] || 0
     );

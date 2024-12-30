@@ -11,17 +11,15 @@ from sklearn.metrics import (accuracy_score, auc, confusion_matrix, f1_score,
                              log_loss, recall_score, roc_auc_score, roc_curve)
 from sklearn.model_selection import (StratifiedKFold, cross_val_score,
                                      train_test_split)
-from sklearn.naive_bayes import GaussianNB  # Naive Bayes modeli
+from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from sklearn.svm import SVC
-from sklearn.tree import \
-    DecisionTreeClassifier  # Decision Tree modelini import ediyoruz
 from sklearn.utils import shuffle
 
-# Veriyi yükle
-data = pd.read_csv("D:/mushroom-ml/data/mushroom_data.csv")  # Veri dosyasını kontrol et
+# Veriyi yükleme
+data = pd.read_csv("D:/mushroom-ml/data/mushroom_data.csv")
 
-# PARTIAL sütununu çıkar
+# PARTIAL sütununu çıkarma
 if 'PARTIAL' in data.columns:
     data = data.drop(columns=['PARTIAL'])
     print("PARTIAL sütunu veri setinden çıkarıldı.")
@@ -30,13 +28,13 @@ target_column = data.columns[0]  # İlk sütun hedef sınıf
 X = data.iloc[:, 1:]  # Özellik sütunları
 y = data[target_column]  # Hedef sınıf
 
-# Kategorik veriyi sayısallaştır (Label Encoding)
+# Kategorik veriyi sayısallaştırma
 X = X.apply(LabelEncoder().fit_transform)
 y = LabelEncoder().fit_transform(y)
 
-# Model değerlendirme fonksiyonu (Loss eklendi)
+# Model değerlendirme fonksiyonu
 def evaluate_model(model, X_train, X_test, y_train, y_test):
-    # Modeli eğitim verisi ile eğit
+    # Modeli eğitim verisi ile eğitme
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     y_train_pred = model.predict(X_train)
@@ -46,10 +44,10 @@ def evaluate_model(model, X_train, X_test, y_train, y_test):
         train_loss = log_loss(y_train, model.predict_proba(X_train))
         test_loss = log_loss(y_test, model.predict_proba(X_test))
     else:
-        train_loss, test_loss = None, None  # Loss hesaplanamıyorsa None döner
+        train_loss, test_loss = None, None
     
     cm = confusion_matrix(y_test, y_pred)
-    accuracy = accuracy_score(y_test, y_pred)
+    accuracy = accuracy_score(y_test, y_pred) #Doğruluk
     sensitivity = recall_score(y_test, y_pred, pos_label=1)  # Duyarlılık
     specificity = recall_score(y_test, y_pred, pos_label=0)  # Özgüllük
     f1 = f1_score(y_test, y_pred)
@@ -72,7 +70,7 @@ def evaluate_model(model, X_train, X_test, y_train, y_test):
         "ROC AUC": roc_auc
     }
 
-# Model sonuçlarını yazdırmak için ortak fonksiyon (Loss sonuçlarını da içerir)
+# Model sonuçlarını yazdırmak için ortak fonksiyon
 def train_and_evaluate(models, X_train, X_test, y_train, y_test, preprocessor=None):
     if preprocessor:
         X_train, X_test = preprocessor(X_train, X_test)
@@ -88,19 +86,18 @@ def train_and_evaluate(models, X_train, X_test, y_train, y_test, preprocessor=No
             if results["Test Loss"] > results["Eğitim Loss"] * 1.2:  # %20 veya daha fazla fark
                 print(f"Uyarı: {name} modeli overfitting yapıyor olabilir!")
 
-# Eğitim ve test verisini ayır
+# Eğitim ve test verisini ayırma
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Pandas DataFrame olarak eğitim ve test verilerini yeniden yapılandıralım
+# Pandas DataFrame olarak eğitim ve test verilerini yeniden yapılandırma
 X_train = pd.DataFrame(X_train, columns=X.columns)
 X_test = pd.DataFrame(X_test, columns=X.columns)
 
-# Modelleri tanımlama (Naive Bayes ekliyoruz)
+# Modelleri tanımlama
 models = {
     "Logistic Regression": LogisticRegression(max_iter=500, random_state=42),
-    # "Decision Tree": DecisionTreeClassifier(max_depth=10, random_state=42),
     "SVM": SVC(probability=True, random_state=42),
-    "Naive Bayes": GaussianNB()  # Naive Bayes modeli eklendi
+    "Naive Bayes": GaussianNB()
 }
 
 # 1. Ham veri ile model eğitimi
@@ -109,8 +106,8 @@ train_and_evaluate(models, X_train, X_test, y_train, y_test)
 
 # 2. Gürültü ekleme
 rng = np.random.RandomState(42)
-X_train_noisy = X_train + rng.normal(0, 0.1, X_train.shape)  # Eğitim setine gürültü ekle
-X_test_noisy = X_test + rng.normal(0, 0.1, X_test.shape)  # Test setine gürültü ekle
+X_train_noisy = X_train + rng.normal(0, 0.1, X_train.shape)  # Eğitim setine gürültü ekleme
+X_test_noisy = X_test + rng.normal(0, 0.1, X_test.shape)  # Test setine gürültü ekleme
 
 # Gürültülü veri ile model performansı
 print("\n2. Gürültülü Veri ile Model Sonuçları:")
@@ -120,11 +117,11 @@ train_and_evaluate(models, X_train_noisy, X_test_noisy, y_train, y_test)
 print("\n3. Gürültü Temizlenmiş Veri ile Model Sonuçları (PCA Uygulandı):")
 pca = PCA(n_components=0.95)  # Verinin %95'ini açıklayan bileşenler seçilecek
 
-# PCA uygulayarak gürültüden temizlenmiş veri oluştur
+# PCA uygulayarak gürültüden temizlenmiş veri oluşturma
 X_train_cleaned = pca.fit_transform(X_train_noisy)
 X_test_cleaned = pca.transform(X_test_noisy)
 
-# Gürültü temizlenmiş veri ile model performansı
+
 train_and_evaluate(models, X_train_cleaned, X_test_cleaned, y_train, y_test)
 
 # 4. Dengesizlikle Baş Etme (SMOTE)
@@ -148,7 +145,7 @@ for name, model in models.items():
 
 # En iyi modelin seçimi (F1 Skoru'na göre)
 best_model_name = None
-best_f1_score = -1  # Başlangıçta negatif bir değer
+best_f1_score = -1  # Başlangıç değeri
 
 for name, model in models.items():
     results = evaluate_model(model, X_train, X_test, y_train, y_test)
